@@ -75,7 +75,7 @@ packages:
     source: sdk
     version: "0.0.0"
   http:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: http
       url: "https://pub.dartlang.org"
@@ -131,7 +131,7 @@ packages:
     source: hosted
     version: "1.8.1"
   provider:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: provider
       url: "https://pub.dartlang.org"

@@ -23,12 +23,21 @@ class _WheaterPageState extends State<WheaterPage> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<Results>(context);
+    final provider = Provider.of<WeatherApi>(context);
+    print(provider.lista);
     return Scaffold(
-         body: Center(
-           child:Text(provider.cityName.toString()),
+         body: provider.lista.isNotEmpty?
+             ListView.builder(
+               itemCount: provider.lista.length,
+                 itemBuilder: (context,index){
+               var  list = provider.lista[index];
+                 return ListTile(
+                   title:  Text(list.toString()),
+                 );
+                 })
+             : const Center(
+           child: CircularProgressIndicator(),
+         ));
 
-         ),
-    );
   }
 }
