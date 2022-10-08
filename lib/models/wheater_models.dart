@@ -20,22 +20,10 @@ class Wheater {
     executionTime = json['execution_time'];
     fromCache = json['from_cache'];
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['by'] = by;
-    data['valid_key'] = validKey;
-    if (results != null) {
-      data['results'] = results!.toJson();
-    }
-    data['execution_time'] = executionTime;
-    data['from_cache'] = fromCache;
-    return data;
-  }
 }
 
 class Results {
-  int? temp;
+  num? temp;
   String? date;
   String? time;
   String? conditionCode;
@@ -93,29 +81,6 @@ class Results {
       });
     }
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['temp'] = temp;
-    data['date'] = date;
-    data['time'] = time;
-    data['condition_code'] = conditionCode;
-    data['description'] = description;
-    data['currently'] = currently;
-    data['cid'] = cid;
-    data['city'] = city;
-    data['img_id'] = imgId;
-    data['humidity'] = humidity;
-    data['wind_speedy'] = windSpeedy;
-    data['sunrise'] = sunrise;
-    data['sunset'] = sunset;
-    data['condition_slug'] = conditionSlug;
-    data['city_name'] = cityName;
-    if (forecast != null) {
-      data['forecast'] = forecast!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
 }
 
 class Forecast {
@@ -141,16 +106,5 @@ class Forecast {
     min = json['min'];
     description = json['description'];
     condition = json['condition'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['date'] = date;
-    data['weekday'] = weekday;
-    data['max'] = max;
-    data['min'] = min;
-    data['description'] = description;
-    data['condition'] = condition;
-    return data;
   }
 }

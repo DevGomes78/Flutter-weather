@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Wheater App'),
       ),
-  body: const WheaterPage(),
+  body:  const WheaterPage(),
     );
   }
 }

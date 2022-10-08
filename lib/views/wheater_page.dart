@@ -13,31 +13,42 @@ class _WheaterPageState extends State<WheaterPage> {
 
 
   late final WeatherApi controller;
+  late final WeatherApi controller1;
 
   @override
   void initState() {
     controller = context.read<WeatherApi>();
+    controller1 = context.read<WeatherApi>();
     controller.getWeather();
+    controller1.getWeather1();
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<WeatherApi>(context);
-    print(provider.lista);
+    final provider= Provider.of<WeatherApi>(context);
     return Scaffold(
-         body: provider.lista.isNotEmpty?
-             ListView.builder(
-               itemCount: provider.lista.length,
-                 itemBuilder: (context,index){
-               var  list = provider.lista[index];
-                 return ListTile(
-                   title:  Text(list.toString()),
-                 );
-                 })
-             : const Center(
-           child: CircularProgressIndicator(),
-         ));
+         body:
+             Column(
+               children: [
+                 Text(controller.json["results"]["city"]),
+                 const SizedBox(height: 10),
+                 Container(
+                   height: 300,
+                   width: 200,
+                   child: ListView.builder(
+                   itemCount: controller1.lista.length,
+                     itemBuilder: (context,index){
+                     return ListTile(
+                       title: Text(controller1.lista[index].toString()),
+                     );
+                     }),)
+
+
+               ],
+             ));
+
 
   }
 }
