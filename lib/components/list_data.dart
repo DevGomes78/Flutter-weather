@@ -56,7 +56,17 @@ class _ListDataState extends State<ListData> {
                  SizedBox(width: 55),
                  Text(controller.json['results']['forecast'][0]['cloudiness'].toString())
                ],
-             )
+             ),
+             SizedBox(height: 10),
+             Row(
+               children:  [
+                 const Icon(Icons.wind_power,size: 20),
+                 SizedBox(width: 20),
+                 Text('Vento'),
+                 SizedBox(width: 60),
+                 Text(controller.json['results']['forecast'][0]['wind_speedy'].toString())
+               ],
+             ),
            ],
          ),
        ),
