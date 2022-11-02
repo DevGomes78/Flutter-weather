@@ -37,7 +37,7 @@ class _ListDataState extends State<ListData> {
                  Text(controller.json['results']['forecast'][0]['max'].toString())
                ],
              ),
-             SizedBox(height: 10),
+             const SizedBox(height: 10),
              Row(
                children:  [
                  const Icon(Icons.cloud,size: 20),
