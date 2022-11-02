@@ -7,9 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wheater App'),
-      ),
+
   body: const WheaterPage(),
     );
   }
