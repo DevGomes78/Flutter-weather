@@ -1,41 +1,41 @@
-class Wheater {
-  Null? by;
+class Weather {
+  String? by;
   bool? validKey;
   Results? results;
   int? executionTime;
   bool? fromCache;
 
-  Wheater(
+  Weather(
       {this.by,
         this.validKey,
         this.results,
         this.executionTime,
         this.fromCache});
 
-  Wheater.fromJson(Map<String, dynamic> json) {
+  Weather.fromJson(Map<String, dynamic> json) {
     by = json['by'];
     validKey = json['valid_key'];
     results =
-    json['results'] != null ? Results.fromJson(json['results']) : null;
+    json['results'] != null ? new Results.fromJson(json['results']) : null;
     executionTime = json['execution_time'];
     fromCache = json['from_cache'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['by'] = by;
-    data['valid_key'] = validKey;
-    if (results != null) {
-      data['results'] = results!.toJson();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['by'] = this.by;
+    data['valid_key'] = this.validKey;
+    if (this.results != null) {
+      data['results'] = this.results!.toJson();
     }
-    data['execution_time'] = executionTime;
-    data['from_cache'] = fromCache;
+    data['execution_time'] = this.executionTime;
+    data['from_cache'] = this.fromCache;
     return data;
   }
 }
 
 class Results {
-  int? temp;
+  num? temp;
   String? date;
   String? time;
   String? conditionCode;
@@ -44,13 +44,17 @@ class Results {
   String? cid;
   String? city;
   String? imgId;
-  int? humidity;
+  num? humidity;
+  num? cloudiness;
+  num? rain;
   String? windSpeedy;
+  num? windDirection;
   String? sunrise;
   String? sunset;
   String? conditionSlug;
   String? cityName;
   List<Forecast>? forecast;
+  String? cref;
 
   Results(
       {this.temp,
@@ -63,12 +67,16 @@ class Results {
         this.city,
         this.imgId,
         this.humidity,
+        this.cloudiness,
+        this.rain,
         this.windSpeedy,
+        this.windDirection,
         this.sunrise,
         this.sunset,
         this.conditionSlug,
         this.cityName,
-        this.forecast});
+        this.forecast,
+        this.cref});
 
   Results.fromJson(Map<String, dynamic> json) {
     temp = json['temp'];
@@ -81,7 +89,10 @@ class Results {
     city = json['city'];
     imgId = json['img_id'];
     humidity = json['humidity'];
+    cloudiness = json['cloudiness'];
+    rain = json['rain'];
     windSpeedy = json['wind_speedy'];
+    windDirection = json['wind_direction'];
     sunrise = json['sunrise'];
     sunset = json['sunset'];
     conditionSlug = json['condition_slug'];
@@ -89,31 +100,36 @@ class Results {
     if (json['forecast'] != null) {
       forecast = <Forecast>[];
       json['forecast'].forEach((v) {
-        forecast!.add(Forecast.fromJson(v));
+        forecast!.add(new Forecast.fromJson(v));
       });
     }
+    cref = json['cref'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['temp'] = temp;
-    data['date'] = date;
-    data['time'] = time;
-    data['condition_code'] = conditionCode;
-    data['description'] = description;
-    data['currently'] = currently;
-    data['cid'] = cid;
-    data['city'] = city;
-    data['img_id'] = imgId;
-    data['humidity'] = humidity;
-    data['wind_speedy'] = windSpeedy;
-    data['sunrise'] = sunrise;
-    data['sunset'] = sunset;
-    data['condition_slug'] = conditionSlug;
-    data['city_name'] = cityName;
-    if (forecast != null) {
-      data['forecast'] = forecast!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['temp'] = this.temp;
+    data['date'] = this.date;
+    data['time'] = this.time;
+    data['condition_code'] = this.conditionCode;
+    data['description'] = this.description;
+    data['currently'] = this.currently;
+    data['cid'] = this.cid;
+    data['city'] = this.city;
+    data['img_id'] = this.imgId;
+    data['humidity'] = this.humidity;
+    data['cloudiness'] = this.cloudiness;
+    data['rain'] = this.rain;
+    data['wind_speedy'] = this.windSpeedy;
+    data['wind_direction'] = this.windDirection;
+    data['sunrise'] = this.sunrise;
+    data['sunset'] = this.sunset;
+    data['condition_slug'] = this.conditionSlug;
+    data['city_name'] = this.cityName;
+    if (this.forecast != null) {
+      data['forecast'] = this.forecast!.map((v) => v.toJson()).toList();
     }
+    data['cref'] = this.cref;
     return data;
   }
 }
@@ -123,6 +139,10 @@ class Forecast {
   String? weekday;
   int? max;
   int? min;
+  int? cloudiness;
+  double? rain;
+  int? rainProbability;
+  String? windSpeedy;
   String? description;
   String? condition;
 
@@ -131,6 +151,10 @@ class Forecast {
         this.weekday,
         this.max,
         this.min,
+        this.cloudiness,
+        this.rain,
+        this.rainProbability,
+        this.windSpeedy,
         this.description,
         this.condition});
 
@@ -139,18 +163,26 @@ class Forecast {
     weekday = json['weekday'];
     max = json['max'];
     min = json['min'];
+    cloudiness = json['cloudiness'];
+    rain = json['rain'];
+    rainProbability = json['rain_probability'];
+    windSpeedy = json['wind_speedy'];
     description = json['description'];
     condition = json['condition'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['date'] = date;
-    data['weekday'] = weekday;
-    data['max'] = max;
-    data['min'] = min;
-    data['description'] = description;
-    data['condition'] = condition;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['date'] = this.date;
+    data['weekday'] = this.weekday;
+    data['max'] = this.max;
+    data['min'] = this.min;
+    data['cloudiness'] = this.cloudiness;
+    data['rain'] = this.rain;
+    data['rain_probability'] = this.rainProbability;
+    data['wind_speedy'] = this.windSpeedy;
+    data['description'] = this.description;
+    data['condition'] = this.condition;
     return data;
   }
 }
