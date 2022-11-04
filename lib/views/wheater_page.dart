@@ -46,8 +46,9 @@ class _WheaterPageState extends State<WheaterPage> {
                   children: [
                     _topcard(),
                     const SizedBox(height: 10),
+                    const ListData(),
+                    const SizedBox(height: 10),
 
-                     ListData(),
                   ],
                 );
               }
@@ -62,8 +63,7 @@ class _WheaterPageState extends State<WheaterPage> {
       alignment: Alignment.center,
       height: 200,
       width: double.infinity,
-      decoration: BoxDecoration(
-           color: Colors.blue),
+      decoration: BoxDecoration(color: Colors.blue),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
