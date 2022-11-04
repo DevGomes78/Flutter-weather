@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_wheater/models/wheater_models.dart';
 import '../components/list_data.dart';
 import '../service/wheater_api_service.dart';
 import 'package:provider/provider.dart';
@@ -64,7 +63,7 @@ class _WheaterPageState extends State<WheaterPage> {
       height: 200,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: Colors.blue),
+           color: Colors.blue),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

@@ -31,9 +31,9 @@ class _ListDataState extends State<ListData> {
              Row(
                children:  [
                  const Icon(Icons.thermostat,size: 20),
-                 SizedBox(width: 20),
-                 Text('Temperatura'),
-                 SizedBox(width: 20),
+                 const SizedBox(width: 20),
+                 const Text('Temperatura'),
+                 const SizedBox(width: 20),
                  Text(controller.json['results']['forecast'][0]['max'].toString())
                ],
              ),
@@ -41,29 +41,29 @@ class _ListDataState extends State<ListData> {
              Row(
                children:  [
                  const Icon(Icons.cloud,size: 20),
-                 SizedBox(width: 20),
-                 Text('Tempo'),
-                 SizedBox(width: 55),
+                 const SizedBox(width: 20),
+                 const Text('Tempo'),
+                 const SizedBox(width: 55),
                  Text(controller.json['results']['forecast'][0]['description'].toString())
                ],
              ),
-             SizedBox(height: 10),
+             const SizedBox(height: 10),
              Row(
                children:  [
                  const Icon(Icons.hub,size: 20),
-                 SizedBox(width: 20),
-                 Text('humidade'),
-                 SizedBox(width: 55),
+                 const SizedBox(width: 20),
+                 const Text('humidade'),
+                 const SizedBox(width: 55),
                  Text(controller.json['results']['forecast'][0]['cloudiness'].toString())
                ],
              ),
-             SizedBox(height: 10),
+             const SizedBox(height: 10),
              Row(
                children:  [
                  const Icon(Icons.wind_power,size: 20),
-                 SizedBox(width: 20),
-                 Text('Vento'),
-                 SizedBox(width: 60),
+                 const SizedBox(width: 20),
+                 const Text('Vento'),
+                 const SizedBox(width: 60),
                  Text(controller.json['results']['forecast'][0]['wind_speedy'].toString())
                ],
              ),
