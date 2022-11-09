@@ -4,14 +4,14 @@ import 'package:provider/provider.dart';
 
 import '../service/weather_service.dart';
 
-class WeatherPage extends StatefulWidget {
-  const WeatherPage({Key? key}) : super(key: key);
+class WeatherList extends StatefulWidget {
+  const WeatherList({Key? key}) : super(key: key);
 
   @override
-  State<WeatherPage> createState() => _WeatherPageState();
+  State<WeatherList> createState() => _WeatherListState();
 }
 
-class _WeatherPageState extends State<WeatherPage> {
+class _WeatherListState extends State<WeatherList> {
   WeatherService controller = WeatherService();
 
   @override
@@ -47,35 +47,7 @@ class _WeatherPageState extends State<WeatherPage> {
                   ),
                 );
               } else {
-                return Column(
-                  children: [
-                    SizedBox(
-                      height: 300,
-                      width: MediaQuery.of(context).size.width - 20,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            controller.decodeJson['results']['temp' + '°']
-                                .toString(),
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            controller.decodeJson['results']['city_name']
-                                .toString(),
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                return
                     SizedBox(
                       height: 200,
                       width: double.infinity,
@@ -108,8 +80,8 @@ class _WeatherPageState extends State<WeatherPage> {
                           );
                         },
                       ),
-                    ),
-                  ],
+
+
                 );
               }
           }

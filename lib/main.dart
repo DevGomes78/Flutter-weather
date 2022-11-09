@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wheater/service/weather_service.dart';
 import 'package:flutter_wheater/service/wheater_api_service.dart';
 import 'package:flutter_wheater/views/home_page.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => WeatherApi()),
+        ChangeNotifierProvider(create: (context) => WeatherService()),
+
 
       ],
       child: MaterialApp(
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomePage(),
+        home: const HomePage(),
       ),
     );
   }

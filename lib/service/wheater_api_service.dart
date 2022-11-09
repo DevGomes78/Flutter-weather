@@ -7,10 +7,6 @@ import '../models/weather_model.dart';
 
 class WeatherApi extends ChangeNotifier {
   var json;
-
-
-
-
   String baseUrl = 'https://api.hgbrasil.com/weather?key=2360757e ';
 
   Future<Results?> getWeather() async {
