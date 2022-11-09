@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import '../models/wheater_models.dart';
+
+import '../models/weather_model.dart';
+
 
 class WeatherApi extends ChangeNotifier {
   var json;
