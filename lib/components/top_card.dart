@@ -41,7 +41,7 @@ class _TopCardState extends State<TopCard> {
                 );
               } else {
                 return Container(
-                  height: 300,
+                  height: 380,
                   width: double.infinity,
                   decoration: const BoxDecoration(color: Colors.white),
                   child: Stack(
@@ -69,17 +69,17 @@ class _TopCardState extends State<TopCard> {
                         ),
                       ),
                       const Positioned(
-                        left: 160,
+                        left: 130,
                         top: 120,
                         child: Icon(
                           Icons.sunny,
-                          size: 80,
+                          size: 150,
                           color: Colors.amber,
                         ),
                       ),
                       Positioned(
                         left: 180,
-                        top: 210,
+                        top: 280,
                         child: Text(
                           '${controller.json['results']['temp']} °',
                           style: const TextStyle(
@@ -91,9 +91,9 @@ class _TopCardState extends State<TopCard> {
                       ),
                       const Positioned(
                         left: 20,
-                        top: 270,
+                        top: 340,
                         child: Text(
-                         'Previsão para semana',
+                          'Previsão para semana',
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.black,

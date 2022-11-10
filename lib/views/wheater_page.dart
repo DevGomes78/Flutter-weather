@@ -15,14 +15,13 @@ class _WheaterPageState extends State<WheaterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:  Colors.white,
       body: Column(
         children: const [
           TopCard(),
-          Divider(color: Colors.grey),
-          Expanded(child: WeatherList()),
-          SizedBox(height: 10),
-         // BottonCard(),
-
+          WeatherList(),
+          SizedBox(height: 20),
+          BottonCard(),
         ],
       ),
     );
