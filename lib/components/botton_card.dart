@@ -54,12 +54,12 @@ class _BottonCardState extends State<BottonCard> {
                     ),
                     const Divider(color: Colors.grey),
                     SizedBox(
-                      height: 150,
+                      height: 170,
                       child: Column(
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 20),
+                                horizontal: 20, vertical: 30),
                             child: Row(
                               children: [
                                 const Text(
@@ -98,7 +98,7 @@ class _BottonCardState extends State<BottonCard> {
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 20),
+                                horizontal: 20, vertical: 10),
                             child: Row(
                               children: [
                                 const Text(
