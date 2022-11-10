@@ -47,41 +47,50 @@ class _WeatherListState extends State<WeatherList> {
                   ),
                 );
               } else {
-                return
-                    SizedBox(
-                      height: 200,
-                      width: double.infinity,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: controller.lista.length,
-                        itemBuilder: (context, index) {
-                          return Card(
-                            elevation: 5,
-                            child: SizedBox(
-                              height: 100,
-                              width: 150,
-                              child: Column(
-                                children: [
-                                  Text(controller.lista[index].date.toString()),
-                                  const SizedBox(height: 10),
-                                  Text(controller.lista[index].weekday
-                                      .toString()),
-                                  const SizedBox(height: 10),
-                                  Text(controller.lista[index].max.toString()),
-                                  const SizedBox(height: 10),
-                                  Text(controller.lista[index].min.toString()),
-                                  const SizedBox(height: 10),
-                                  Text(controller.lista[index].description
-                                      .toString()),
-                                  const SizedBox(height: 10),
-                                ],
+                return SizedBox(
+                  height: 180,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: controller.lista.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        elevation: 5,
+                        child: SizedBox(
+                          height: 100,
+                          width: 150,
+                          child: Column(
+                            children: [
+                              Text(
+                                controller.lista[index].weekday.toString(),
+                                style: const TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          );
-                        },
-                      ),
-
-
+                              const SizedBox(height: 10),
+                              Text(
+                                controller.lista[index].date.toString(),
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              const Icon(
+                                Icons.sunny,
+                                size: 50,
+                                color: Colors.amber,
+                              ),
+                              const SizedBox(height: 10),
+                              Text(controller.lista[index].description
+                                  .toString()),
+                              const SizedBox(height: 10),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 );
               }
           }
