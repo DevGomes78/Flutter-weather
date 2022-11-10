@@ -93,7 +93,7 @@ class _TopCardState extends State<TopCard> {
                         left: 20,
                         top: 220,
                         child: Text(
-                         'Previao para semana',
+                         'Previsão para semana',
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.black,

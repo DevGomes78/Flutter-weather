@@ -49,7 +49,7 @@ class _WeatherListState extends State<WeatherList> {
                 );
               } else {
                 return SizedBox(
-                  height: 180,
+                  height: 170,
                   width: double.infinity,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -92,14 +92,21 @@ class _WeatherListState extends State<WeatherList> {
                                           size: 50,
                                           color: Colors.grey,
                                         )
-                                      : const Icon(
-                                          Icons.cloudy_snowing,
-                                          size: 50,
-                                          color: Colors.grey,
-                                        ),
+                                      :  controller.lista[index].description
+                                  .toString() ==
+                                  'Chuvas esparsas'
+                                  ? const Icon(
+                                Icons.sunny_snowing,
+                                size: 50,
+                                color: Colors.grey,
+                              ):const Icon(
+                                Icons.cloud,
+                                size: 50,
+                                color: Colors.grey,
+                              ),
                               const SizedBox(height: 10),
                               Text(controller.lista[index].description
-                                  .toString()),
+                                  .toString(),style: TextStyle(fontSize: 16),),
                               const SizedBox(height: 10),
                             ],
                           ),
