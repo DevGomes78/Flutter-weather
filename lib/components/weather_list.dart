@@ -12,6 +12,7 @@ class WeatherList extends StatefulWidget {
 }
 
 class _WeatherListState extends State<WeatherList> {
+  late String tempo;
   WeatherService controller = WeatherService();
 
   @override
@@ -76,11 +77,26 @@ class _WeatherListState extends State<WeatherList> {
                                 ),
                               ),
                               const SizedBox(height: 10),
-                              const Icon(
-                                Icons.sunny,
-                                size: 50,
-                                color: Colors.amber,
-                              ),
+                              controller.lista[index].description.toString() ==
+                                      'Tempo limpo'
+                                  ? const Icon(
+                                      Icons.sunny,
+                                      size: 50,
+                                      color: Colors.amber,
+                                    )
+                                  : controller.lista[index].description
+                                              .toString() ==
+                                          'Chuva'
+                                      ? const Icon(
+                                          Icons.cloudy_snowing,
+                                          size: 50,
+                                          color: Colors.grey,
+                                        )
+                                      : const Icon(
+                                          Icons.cloudy_snowing,
+                                          size: 50,
+                                          color: Colors.grey,
+                                        ),
                               const SizedBox(height: 10),
                               Text(controller.lista[index].description
                                   .toString()),
