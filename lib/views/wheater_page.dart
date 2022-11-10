@@ -19,6 +19,7 @@ class _WheaterPageState extends State<WheaterPage> {
       body: Column(
         children: const [
           TopCard(),
+          Divider(color: Colors.grey),
           WeatherList(),
           SizedBox(height: 20),
           BottonCard(),

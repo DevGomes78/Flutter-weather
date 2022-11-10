@@ -91,7 +91,7 @@ class _TopCardState extends State<TopCard> {
                       ),
                       const Positioned(
                         left: 20,
-                        top: 340,
+                        top: 355,
                         child: Text(
                           'Previsão para semana',
                           style: TextStyle(

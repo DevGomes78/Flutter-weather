@@ -54,7 +54,7 @@ class _BottonCardState extends State<BottonCard> {
                     ),
                     const Divider(color: Colors.grey),
                     SizedBox(
-                      height: 200,
+                      height: 150,
                       child: Column(
                         children: [
                           Padding(
@@ -75,7 +75,7 @@ class _BottonCardState extends State<BottonCard> {
                                       .toString(),
                                   style: const TextStyle(fontSize: 18),
                                 ),
-                                const SizedBox(width: 50),
+                                const SizedBox(width: 75),
                                 Row(
                                   children: [
                                     const Text(
@@ -96,7 +96,6 @@ class _BottonCardState extends State<BottonCard> {
                               ],
                             ),
                           ),
-
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 20),
@@ -109,27 +108,23 @@ class _BottonCardState extends State<BottonCard> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(width: 40),
+                                const SizedBox(width: 25),
                                 Text(
-                                  '${(controller.json['results']['forecast'][0]['wind_speedy'])} °'
-                                      .toString(),
+                                  (controller.json['results']['forecast'][0]
+                                          ['wind_speedy']
+                                      .toString()),
                                   style: const TextStyle(fontSize: 18),
                                 ),
-                                const SizedBox(width: 50),
+                                const SizedBox(width: 20),
                                 Row(
                                   children: [
-                                    const Text(
-                                      'Condição',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 40),
                                     Text(
-                                      '${(controller.json['results']['forecast'][0]['description'])} °'
+                                      (controller.json['results']['forecast'][0]
+                                              ['description'])
                                           .toString(),
-                                      style: const TextStyle(fontSize: 18),
+                                      style: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 ),
