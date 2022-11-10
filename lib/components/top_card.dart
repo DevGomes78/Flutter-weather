@@ -41,14 +41,14 @@ class _TopCardState extends State<TopCard> {
                 );
               } else {
                 return Container(
-                  height: 240,
+                  height: 300,
                   width: double.infinity,
                   decoration: const BoxDecoration(color: Colors.white),
                   child: Stack(
                     children: [
                       Positioned(
                         left: 20,
-                        top: 30,
+                        top: 60,
                         child: Text(
                           controller.json['results']['city'],
                           style: const TextStyle(
@@ -59,7 +59,7 @@ class _TopCardState extends State<TopCard> {
                       ),
                       Positioned(
                         left: 20,
-                        top: 60,
+                        top: 90,
                         child: Text(
                           controller.json['results']['date'],
                           style: const TextStyle(
@@ -69,8 +69,8 @@ class _TopCardState extends State<TopCard> {
                         ),
                       ),
                       const Positioned(
-                        left: 120,
-                        top: 80,
+                        left: 160,
+                        top: 120,
                         child: Icon(
                           Icons.sunny,
                           size: 80,
@@ -78,8 +78,8 @@ class _TopCardState extends State<TopCard> {
                         ),
                       ),
                       Positioned(
-                        left: 140,
-                        top: 160,
+                        left: 180,
+                        top: 210,
                         child: Text(
                           '${controller.json['results']['temp']} °',
                           style: const TextStyle(
@@ -91,7 +91,7 @@ class _TopCardState extends State<TopCard> {
                       ),
                       const Positioned(
                         left: 20,
-                        top: 220,
+                        top: 270,
                         child: Text(
                          'Previsão para semana',
                           style: TextStyle(
