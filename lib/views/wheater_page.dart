@@ -47,10 +47,9 @@ class _WheaterPageState extends State<WheaterPage> {
                   children: [
                     _topcard(),
                     const SizedBox(height: 10),
-                    const ListData(),
+                    //  const ListData(),
                     const SizedBox(height: 10),
                     Expanded(child: const WeatherList()),
-
                   ],
                 );
               }
@@ -62,35 +61,52 @@ class _WheaterPageState extends State<WheaterPage> {
 
   _topcard() {
     return Container(
-      alignment: Alignment.center,
-      height: 200,
+      height: 220,
       width: double.infinity,
       decoration: const BoxDecoration(color: Colors.blue),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: Stack(
         children: [
-          Text(
-            controller.json['results']['city'],
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
+          Positioned(
+            left: 20,
+            top: 30,
+            child: Text(
+              controller.json['results']['city'],
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
             ),
           ),
-          const SizedBox(height: 10),
-          Text(
-            '${controller.json['results']['temp']} °',
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
+          Positioned(
+            left: 20,
+            top: 60,
+            child: Text(
+              controller.json['results']['date'],
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+              ),
             ),
           ),
-          const SizedBox(height: 10),
-          Text(
-            controller.json['results']['description'],
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
+          const Positioned(
+            left: 120,
+            top: 80,
+            child: Icon(
+              Icons.sunny,
+              size: 80,
+              color: Colors.amber,
+            ),
+          ),
+          Positioned(
+            left: 140,
+            top: 170,
+            child: Text(
+              '${controller.json['results']['temp']} °',
+              style: const TextStyle(
+                fontSize: 35,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],
