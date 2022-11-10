@@ -41,9 +41,9 @@ class _TopCardState extends State<TopCard> {
                 );
               } else {
                 return Container(
-                  height: 220,
+                  height: 240,
                   width: double.infinity,
-                  decoration: const BoxDecoration(color: Colors.blue),
+                  decoration: const BoxDecoration(color: Colors.white),
                   child: Stack(
                     children: [
                       Positioned(
@@ -53,7 +53,7 @@ class _TopCardState extends State<TopCard> {
                           controller.json['results']['city'],
                           style: const TextStyle(
                             fontSize: 20,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -64,7 +64,7 @@ class _TopCardState extends State<TopCard> {
                           controller.json['results']['date'],
                           style: const TextStyle(
                             fontSize: 16,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -79,12 +79,24 @@ class _TopCardState extends State<TopCard> {
                       ),
                       Positioned(
                         left: 140,
-                        top: 170,
+                        top: 160,
                         child: Text(
                           '${controller.json['results']['temp']} °',
                           style: const TextStyle(
                             fontSize: 35,
-                            color: Colors.white,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const Positioned(
+                        left: 20,
+                        top: 220,
+                        child: Text(
+                         'Previao para semana',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
