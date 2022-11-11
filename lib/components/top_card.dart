@@ -40,72 +40,76 @@ class _TopCardState extends State<TopCard> {
                   child: Text('erro na pagina'),
                 );
               } else {
-                return Container(
-                  height: 380,
-                  width: double.infinity,
-                  decoration: const BoxDecoration(color: Colors.white),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: 20,
-                        top: 60,
-                        child: Text(
-                          controller.json['results']['city'],
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 20,
-                        top: 90,
-                        child: Text(
-                          controller.json['results']['date'],
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                      const Positioned(
-                        left: 130,
-                        top: 120,
-                        child: Icon(
-                          Icons.sunny,
-                          size: 150,
-                          color: Colors.amber,
-                        ),
-                      ),
-                      Positioned(
-                        left: 180,
-                        top: 280,
-                        child: Text(
-                          '${controller.json['results']['temp']} °',
-                          style: const TextStyle(
-                            fontSize: 35,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      const Positioned(
-                        left: 20,
-                        top: 355,
-                        child: Text(
-                          'Previsão para semana',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
+                return _topCard();
               }
           }
         });
+  }
+
+  _topCard() {
+    return Container(
+      height: 380,
+      width: double.infinity,
+      decoration: const BoxDecoration(color: Colors.white),
+      child: Stack(
+        children: [
+          Positioned(
+            left: 20,
+            top: 60,
+            child: Text(
+              controller.json['results']['city'],
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 20,
+            top: 90,
+            child: Text(
+              controller.json['results']['date'],
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          const Positioned(
+            left: 130,
+            top: 120,
+            child: Icon(
+              Icons.sunny,
+              size: 150,
+              color: Colors.amber,
+            ),
+          ),
+          Positioned(
+            left: 180,
+            top: 280,
+            child: Text(
+              '${controller.json['results']['temp']} °',
+              style: const TextStyle(
+                fontSize: 35,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const Positioned(
+            left: 20,
+            top: 355,
+            child: Text(
+              'Previsão para semana',
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
