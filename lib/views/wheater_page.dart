@@ -16,14 +16,23 @@ class _WheaterPageState extends State<WheaterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:  Colors.white,
-      body: ListView(
-        children: const [
-          TopCard(),
-          Divider(color: Colors.grey),
-          WeatherList(),
-          SizedBox(height: 20),
-          BottonCard(),
-        ],
+      body: Container(
+        decoration: const BoxDecoration(
+          color: Colors.black,
+
+
+
+
+        ),
+        child: ListView(
+          children: const [
+            TopCard(),
+            Divider(color: Colors.white),
+            WeatherList(),
+            SizedBox(height: 20),
+            BottonCard(),
+          ],
+        ),
       ),
     );
   }

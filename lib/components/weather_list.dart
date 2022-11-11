@@ -56,33 +56,36 @@ class _WeatherListState extends State<WeatherList> {
 
   _weatherList() {
     return Container(
-      color: Colors.white,
       height: 180,
       width: double.infinity,
+      decoration: const BoxDecoration(
+        color: Colors.black,
+      ),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: controller.lista.length,
         itemBuilder: (context, index) {
           return Card(
             elevation: 5,
-            child: SizedBox(
+            child: Container(
               height: 100,
               width: 150,
+              decoration: const BoxDecoration(
+                color: Colors.black,
+              ),
               child: Column(
                 children: [
                   Text(
                     controller.lista[index].weekday.toString(),
                     style: const TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     controller.lista[index].date.toString(),
-                    style: const TextStyle(
-                      fontSize: 18,
-                    ),
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   ),
                   const SizedBox(height: 10),
                   controller.lista[index].description.toString() ==
@@ -97,27 +100,27 @@ class _WeatherListState extends State<WeatherList> {
                           ? const Icon(
                               Icons.cloudy_snowing,
                               size: 50,
-                              color: Colors.grey,
+                              color: Colors.white70,
                             )
                           : controller.lista[index].description.toString() ==
                                   'Chuvas esparsas'
                               ? const Icon(
                                   Icons.sunny_snowing,
                                   size: 50,
-                                  color: Colors.grey,
+                                  color: Colors.white70,
                                 )
                               : const Icon(
                                   Icons.cloud,
                                   size: 50,
-                                  color: Colors.grey,
+                                  color: Colors.white70,
                                 ),
                   const SizedBox(height: 10),
                   Text(
                     '${controller.lista[index].max} °'.toString(),
                     style: const TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   const SizedBox(height: 10),
                 ],

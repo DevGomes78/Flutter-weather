@@ -50,7 +50,9 @@ class _TopCardState extends State<TopCard> {
     return Container(
       height: 380,
       width: double.infinity,
-      decoration: const BoxDecoration(color: Colors.white),
+      decoration: const BoxDecoration(
+        color: Colors.black,
+      ),
       child: Stack(
         children: [
           Positioned(
@@ -60,7 +62,7 @@ class _TopCardState extends State<TopCard> {
               controller.json['results']['city'],
               style: const TextStyle(
                 fontSize: 20,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),
@@ -71,7 +73,7 @@ class _TopCardState extends State<TopCard> {
               controller.json['results']['date'],
               style: const TextStyle(
                 fontSize: 16,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),
@@ -91,7 +93,7 @@ class _TopCardState extends State<TopCard> {
               '${controller.json['results']['temp']} °',
               style: const TextStyle(
                 fontSize: 35,
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -103,7 +105,7 @@ class _TopCardState extends State<TopCard> {
               'Previsão para semana',
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
