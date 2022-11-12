@@ -10,6 +10,7 @@ class TopCard extends StatefulWidget {
 }
 
 class _TopCardState extends State<TopCard> {
+  final TextEditingController _cityController = TextEditingController();
   WeatherApi controller = WeatherApi();
 
   @override
@@ -77,20 +78,42 @@ class _TopCardState extends State<TopCard> {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             left: 130,
             top: 120,
-            child: Icon(
-              Icons.sunny,
-              size: 150,
-              color: Colors.amber,
-            ),
+            child: controller.json['results']['forecast'][0]['description'] ==
+                    'Tempo limpo'
+                ? const Icon(
+                    Icons.sunny,
+                    size: 50,
+                    color: Colors.amber,
+                  )
+                : controller.json['results']['forecast'][0]['description'] ==
+                        'Chuva'
+                    ? const Icon(
+                        Icons.cloudy_snowing,
+                        size: 50,
+                        color: Colors.white70,
+                      )
+                    : controller.json['results']['forecast'][0]
+                                ['description'] ==
+                            'Chuvas esparsas'
+                        ? const Icon(
+                            Icons.sunny_snowing,
+                            size: 150,
+                            color: Colors.white70,
+                          )
+                        : const Icon(
+                            Icons.cloud,
+                            size: 50,
+                            color: Colors.white70,
+                          ),
           ),
           Positioned(
             left: 180,
             top: 280,
             child: Text(
-              '${controller.json['results']['temp']} °',
+              '${controller.json['results']['forecast'][0]['max']} °',
               style: const TextStyle(
                 fontSize: 35,
                 color: Colors.white,

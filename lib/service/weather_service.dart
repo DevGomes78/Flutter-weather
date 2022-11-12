@@ -9,7 +9,7 @@ class WeatherService extends ChangeNotifier {
 
   Future<List<Forecast>> getTempo() async {
     final response = await http
-        .get(Uri.parse('https://api.hgbrasil.com/weather?key=2360757'));
+        .get(Uri.parse('https://api.hgbrasil.com/weather?key=90d42896'));
     if (response.statusCode == 200) {
       decodeJson = jsonDecode(response.body);
       decodeJson['results']['forecast']
@@ -19,9 +19,9 @@ class WeatherService extends ChangeNotifier {
       return [];
     }
   }
-  Future<List<Forecast>> getState() async {
+  Future<List<Forecast>> getCity() async {
     final response = await http
-        .get(Uri.parse('https://api.hgbrasil.com/weather?key=2360757'));
+        .get(Uri.parse('https://api.hgbrasil.com/weather?key=90d42896e'));
     if (response.statusCode == 200) {
       decodeJson = jsonDecode(response.body);
       decodeJson['results']['forecast']
