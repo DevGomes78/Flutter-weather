@@ -59,7 +59,7 @@ class _WeatherListState extends State<WeatherList> {
       height: 180,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.black,
+        color: Colors.white,
       ),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -71,7 +71,7 @@ class _WeatherListState extends State<WeatherList> {
               height: 100,
               width: 150,
               decoration: const BoxDecoration(
-                color: Colors.black,
+                color: Colors.white,
               ),
               child: Column(
                 children: [
@@ -80,12 +80,12 @@ class _WeatherListState extends State<WeatherList> {
                     style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.black),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     controller.lista[index].date.toString(),
-                    style: const TextStyle(fontSize: 18, color: Colors.white),
+                    style: const TextStyle(fontSize: 18, color: Colors.black),
                   ),
                   const SizedBox(height: 10),
                   controller.lista[index].description.toString() ==
@@ -100,19 +100,19 @@ class _WeatherListState extends State<WeatherList> {
                           ? const Icon(
                               Icons.cloudy_snowing,
                               size: 50,
-                              color: Colors.white70,
+                              color: Colors.grey,
                             )
                           : controller.lista[index].description.toString() ==
                                   'Chuvas esparsas'
                               ? const Icon(
                                   Icons.sunny_snowing,
                                   size: 50,
-                                  color: Colors.white70,
+                                  color: Colors.grey,
                                 )
                               : const Icon(
                                   Icons.cloud,
                                   size: 50,
-                                  color: Colors.white70,
+                                  color: Colors.grey,
                                 ),
                   const SizedBox(height: 10),
                   Text(
@@ -120,7 +120,7 @@ class _WeatherListState extends State<WeatherList> {
                     style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.black),
                   ),
                   const SizedBox(height: 10),
                 ],

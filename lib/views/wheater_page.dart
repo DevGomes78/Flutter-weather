@@ -17,17 +17,17 @@ class _WheaterPageState extends State<WheaterPage> {
       backgroundColor: Colors.white,
       body: Container(
         decoration: const BoxDecoration(
-          color: Colors.black,
+          color: Colors.white,
         ),
         child: ListView(
           children: const [
             TopCard(),
-            Divider(color: Colors.white),
+            Divider(color: Colors.grey),
             WeatherList(),
-            Divider(color: Colors.white),
+            Divider(color: Colors.grey),
             SizedBox(height: 20),
             BottonCard(),
-            Divider(color: Colors.white),
+            Divider(color: Colors.grey),
           ],
         ),
       ),

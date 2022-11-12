@@ -48,7 +48,7 @@ class _BottonCardState extends State<BottonCard> {
   _bottonCard() {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.black,
+        color: Colors.white,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +60,7 @@ class _BottonCardState extends State<BottonCard> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ),
@@ -79,14 +79,17 @@ class _BottonCardState extends State<BottonCard> {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                       const SizedBox(width: 40),
                       Text(
                         '${(controller.json['results']['forecast'][0]['min'])} °'
                             .toString(),
-                        style: const TextStyle(fontSize: 18,color: Colors.white,),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
                       ),
                       const SizedBox(width: 75),
                       Row(
@@ -96,14 +99,17 @@ class _BottonCardState extends State<BottonCard> {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                           ),
                           const SizedBox(width: 40),
                           Text(
                             '${(controller.json['results']['forecast'][0]['max'])} °'
                                 .toString(),
-                            style: const TextStyle(fontSize: 18,color: Colors.white,),
+                            style: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),
@@ -120,15 +126,18 @@ class _BottonCardState extends State<BottonCard> {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                       const SizedBox(width: 25),
                       Text(
-                        (controller.json['results']['forecast'][0]['wind_speedy']
+                        (controller.json['results']['forecast'][0]
+                                ['wind_speedy']
                             .toString()),
-                        style: const TextStyle(fontSize: 18,color: Colors.white,),
-
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
                       ),
                       const SizedBox(width: 20),
                       Row(
@@ -138,7 +147,10 @@ class _BottonCardState extends State<BottonCard> {
                                     ['description'])
                                 .toString(),
                             style: const TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white,),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
                           ),
                         ],
                       ),

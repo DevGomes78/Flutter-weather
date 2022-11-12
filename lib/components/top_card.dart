@@ -52,7 +52,7 @@ class _TopCardState extends State<TopCard> {
       height: 380,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.black,
+        color: Colors.white,
       ),
       child: Stack(
         children: [
@@ -63,7 +63,7 @@ class _TopCardState extends State<TopCard> {
               controller.json['results']['city'],
               style: const TextStyle(
                 fontSize: 20,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ),
@@ -74,7 +74,7 @@ class _TopCardState extends State<TopCard> {
               controller.json['results']['date'],
               style: const TextStyle(
                 fontSize: 16,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ),
@@ -93,7 +93,7 @@ class _TopCardState extends State<TopCard> {
                     ? const Icon(
                         Icons.cloudy_snowing,
                         size: 50,
-                        color: Colors.white70,
+                        color: Colors.grey,
                       )
                     : controller.json['results']['forecast'][0]
                                 ['description'] ==
@@ -101,12 +101,12 @@ class _TopCardState extends State<TopCard> {
                         ? const Icon(
                             Icons.sunny_snowing,
                             size: 150,
-                            color: Colors.white70,
+                            color: Colors.grey,
                           )
                         : const Icon(
                             Icons.cloud,
                             size: 50,
-                            color: Colors.white70,
+                            color: Colors.grey,
                           ),
           ),
           Positioned(
@@ -116,7 +116,7 @@ class _TopCardState extends State<TopCard> {
               '${controller.json['results']['forecast'][0]['max']} °',
               style: const TextStyle(
                 fontSize: 35,
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -128,7 +128,7 @@ class _TopCardState extends State<TopCard> {
               'Previsão para semana',
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
