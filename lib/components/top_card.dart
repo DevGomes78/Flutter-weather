@@ -10,6 +10,7 @@ class TopCard extends StatefulWidget {
 }
 
 class _TopCardState extends State<TopCard> {
+  final TextEditingController _cityController = TextEditingController();
   WeatherApi controller = WeatherApi();
 
   @override
