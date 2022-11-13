@@ -19,13 +19,21 @@ class WeatherService extends ChangeNotifier {
       return [];
     }
   }
-  Future<List<Forecast>> getCity() async {
+
+  Future<List<Forecast>> getdate({required String query}) async {
     final response = await http
         .get(Uri.parse('https://api.hgbrasil.com/weather?key=90d42896e'));
     if (response.statusCode == 200) {
       decodeJson = jsonDecode(response.body);
       decodeJson['results']['forecast']
           .forEach((item) => lista.add(Forecast.fromJson(item)));
+      lista = lista
+          .where(
+            (e) => e.date!.toLowerCase().contains(
+                  query.toLowerCase(),
+                ),
+          )
+          .toList();
       return lista;
     } else {
       return [];

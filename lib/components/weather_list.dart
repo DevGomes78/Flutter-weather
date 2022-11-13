@@ -15,6 +15,7 @@ class _WeatherListState extends State<WeatherList> {
   late String tempo;
   WeatherService controller = WeatherService();
 
+
   @override
   void initState() {
     controller = context.read<WeatherService>();
@@ -65,65 +66,70 @@ class _WeatherListState extends State<WeatherList> {
         scrollDirection: Axis.horizontal,
         itemCount: controller.lista.length,
         itemBuilder: (context, index) {
-          return Card(
-            elevation: 5,
-            child: Container(
-              height: 100,
-              width: 150,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Column(
-                children: [
-                  Text(
-                    controller.lista[index].weekday.toString(),
-                    style: const TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    controller.lista[index].date.toString(),
-                    style: const TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  const SizedBox(height: 10),
-                  controller.lista[index].description.toString() ==
-                          'Tempo limpo'
-                      ? const Icon(
-                          Icons.sunny,
-                          size: 50,
-                          color: Colors.amber,
-                        )
-                      : controller.lista[index].description.toString() ==
-                              'Chuva'
-                          ? const Icon(
-                              Icons.cloudy_snowing,
-                              size: 50,
-                              color: Colors.grey,
-                            )
-                          : controller.lista[index].description.toString() ==
-                                  'Chuvas esparsas'
-                              ? const Icon(
-                                  Icons.sunny_snowing,
-                                  size: 50,
-                                  color: Colors.grey,
-                                )
-                              : const Icon(
-                                  Icons.cloud,
-                                  size: 50,
-                                  color: Colors.grey,
-                                ),
-                  const SizedBox(height: 10),
-                  Text(
-                    '${controller.lista[index].max} °'.toString(),
-                    style: const TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                  const SizedBox(height: 10),
-                ],
+          return InkWell(
+            onTap: (){
+
+            },
+            child: Card(
+              elevation: 5,
+              child: Container(
+                height: 100,
+                width: 150,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      controller.lista[index].weekday.toString(),
+                      style: const TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      controller.lista[index].date.toString(),
+                      style: const TextStyle(fontSize: 18, color: Colors.black),
+                    ),
+                    const SizedBox(height: 10),
+                    controller.lista[index].description.toString() ==
+                            'Tempo limpo'
+                        ? const Icon(
+                            Icons.sunny,
+                            size: 50,
+                            color: Colors.amber,
+                          )
+                        : controller.lista[index].description.toString() ==
+                                'Chuva'
+                            ? const Icon(
+                                Icons.cloudy_snowing,
+                                size: 50,
+                                color: Colors.grey,
+                              )
+                            : controller.lista[index].description.toString() ==
+                                    'Chuvas esparsas'
+                                ? const Icon(
+                                    Icons.sunny_snowing,
+                                    size: 50,
+                                    color: Colors.grey,
+                                  )
+                                : const Icon(
+                                    Icons.cloud,
+                                    size: 50,
+                                    color: Colors.grey,
+                                  ),
+                    const SizedBox(height: 10),
+                    Text(
+                      '${controller.lista[index].max} °'.toString(),
+                      style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
+                ),
               ),
             ),
           );
