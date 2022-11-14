@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wheater/constants/string_constants.dart';
 import '../service/wheater_api_service.dart';
 import 'package:provider/provider.dart';
 
@@ -38,7 +39,7 @@ class _TopCardState extends State<TopCard> {
             default:
               if (snapshot.hasError) {
                 return const Center(
-                  child: Text('erro na pagina'), 
+                  child: Text(StringConstants.errorPage),
                 );
               } else {
                 return _topCard();
@@ -82,14 +83,14 @@ class _TopCardState extends State<TopCard> {
             left: 130,
             top: 120,
             child: controller.json['results']['forecast'][0]['description'] ==
-                    'Tempo limpo'
+                    StringConstants.clearWeather
                 ? const Icon(
                     Icons.sunny,
                     size: 50,
                     color: Colors.amber,
                   )
                 : controller.json['results']['forecast'][0]['description'] ==
-                        'Chuva'
+                        StringConstants.Rain
                     ? const Icon(
                         Icons.cloudy_snowing,
                         size: 50,
@@ -97,7 +98,7 @@ class _TopCardState extends State<TopCard> {
                       )
                     : controller.json['results']['forecast'][0]
                                 ['description'] ==
-                            'Chuvas esparsas'
+                            StringConstants.scatteredRains
                         ? const Icon(
                             Icons.sunny_snowing,
                             size: 150,
@@ -126,7 +127,7 @@ class _TopCardState extends State<TopCard> {
             left: 20,
             top: 355,
             child: Text(
-              'Previsão para semana',
+              StringConstants.forecastForWeek,
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.black,
