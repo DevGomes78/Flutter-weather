@@ -57,7 +57,7 @@ class _BottonCardState extends State<BottonCard> {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              'Informaçoes adicionais',
+              StringConstants.aditionalInfo,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
