@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wheater/constants/string_constants.dart';
 import 'package:flutter_wheater/models/weather_model.dart';
 import 'package:provider/provider.dart';
 
@@ -44,7 +45,7 @@ class _WeatherListState extends State<WeatherList> {
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: const Center(
-                  child: Text('erro no appp'),
+                  child: Text(StringConstants.errorPage),
                 ),
               );
             } else {
@@ -94,7 +95,7 @@ class _WeatherListState extends State<WeatherList> {
                     ),
                     const SizedBox(height: 10),
                     controller.lista[index].description.toString() ==
-                            'Tempo limpo'
+                        StringConstants.clearWeather
                         ? const Icon(
                             Icons.sunny,
                             size: 50,
@@ -108,8 +109,9 @@ class _WeatherListState extends State<WeatherList> {
                                 color: Colors.grey,
                               )
                             : controller.lista[index].description.toString() ==
-                                    'Chuvas esparsas'
-                                ? const Icon(
+                        StringConstants.scatteredRains
+
+                        ? const Icon(
                                     Icons.sunny_snowing,
                                     size: 50,
                                     color: Colors.grey,
