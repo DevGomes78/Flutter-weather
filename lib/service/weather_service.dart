@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
+import '../constants/service_constants.dart';
 import '../models/weather_model.dart';
 
 class WeatherService extends ChangeNotifier {
@@ -8,8 +9,7 @@ class WeatherService extends ChangeNotifier {
   var decodeJson;
 
   Future<List<Forecast>> getTempo() async {
-    final response = await http
-        .get(Uri.parse('https://api.hgbrasil.com/weather?key=90d42896'));
+    final response = await http.get(Uri.parse(ServiceConstants.baseUrl));
     if (response.statusCode == 200) {
       decodeJson = jsonDecode(response.body);
       decodeJson['results']['forecast']
@@ -21,8 +21,7 @@ class WeatherService extends ChangeNotifier {
   }
 
   Future<List<Forecast>> getdate({required String query}) async {
-    final response = await http
-        .get(Uri.parse('https://api.hgbrasil.com/weather?key=90d42896e'));
+    final response = await http.get(Uri.parse(ServiceConstants.baseUrl));
     if (response.statusCode == 200) {
       decodeJson = jsonDecode(response.body);
       decodeJson['results']['forecast']

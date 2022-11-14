@@ -38,7 +38,7 @@ class _TopCardState extends State<TopCard> {
             default:
               if (snapshot.hasError) {
                 return const Center(
-                  child: Text('erro na pagina'),
+                  child: Text('erro na pagina'), 
                 );
               } else {
                 return _topCard();
