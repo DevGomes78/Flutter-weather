@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/weather_model.dart';
 import '../service/wheater_api_service.dart';
 
 class BottonCard extends StatefulWidget {
-  const BottonCard({Key? key}) : super(key: key);
+
 
   @override
   State<BottonCard> createState() => _BottonCardState();

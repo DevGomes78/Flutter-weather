@@ -4,7 +4,7 @@ import '../components/top_card.dart';
 import '../components/weather_list.dart';
 
 class WheaterPage extends StatefulWidget {
-  const WheaterPage({Key? key}) : super(key: key);
+
 
   @override
   State<WheaterPage> createState() => _WheaterPageState();
@@ -20,7 +20,7 @@ class _WheaterPageState extends State<WheaterPage> {
           color: Colors.black,
         ),
         child: ListView(
-          children: const [
+          children:  [
             TopCard(),
             Divider(color: Colors.white),
             WeatherList(),
