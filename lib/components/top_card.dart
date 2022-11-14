@@ -102,8 +102,7 @@ class _TopCardState extends State<TopCard> {
                         ? const Icon(
                             Icons.sunny_snowing,
                             size: 150,
-                            color: Colors.grey
-              ,
+                            color: Colors.grey,
                           )
                         : const Icon(
                             Icons.cloud,
