@@ -114,7 +114,7 @@ class _WeatherListState extends State<WeatherList> {
                         ? const Icon(
                                     Icons.sunny_snowing,
                                     size: 50,
-                                    color: Colors.grey,
+                      color: Colors.amber,
                                   )
                                 : const Icon(
                                     Icons.cloud,
