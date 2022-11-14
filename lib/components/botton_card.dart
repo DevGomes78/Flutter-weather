@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wheater/constants/string_constants.dart';
 import 'package:provider/provider.dart';
 import '../service/wheater_api_service.dart';
 
@@ -36,7 +37,7 @@ class _BottonCardState extends State<BottonCard> {
             default:
               if (snapshot.hasError) {
                 return const Center(
-                  child: Text('erro na pagina'),
+                  child: Text(StringConstants.errorPage),
                 );
               } else {
                 return _bottonCard();
