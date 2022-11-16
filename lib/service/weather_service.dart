@@ -6,6 +6,7 @@ import '../models/weather_model.dart';
 
 class WeatherService extends ChangeNotifier {
   List<Forecast> lista = [];
+  List<Forecast> date = [];
   var decodeJson;
 
   Future<List<Forecast>> getTempo() async {
@@ -26,14 +27,14 @@ class WeatherService extends ChangeNotifier {
       decodeJson = jsonDecode(response.body);
       decodeJson['results']['forecast']
           .forEach((item) => lista.add(Forecast.fromJson(item)));
-      lista = lista
+      date = lista
           .where(
             (e) => e.date!.toLowerCase().contains(
                   query.toLowerCase(),
                 ),
           )
           .toList();
-      return lista;
+      return date;
     } else {
       return [];
     }
