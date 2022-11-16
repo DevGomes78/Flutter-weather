@@ -14,10 +14,10 @@ class _WheaterPageState extends State<WheaterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Container(
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: Colors.black,
         ),
         child: ListView(
           children: const [
@@ -25,7 +25,7 @@ class _WheaterPageState extends State<WheaterPage> {
             Divider(color: Colors.grey),
             WeatherList(),
             Divider(color: Colors.grey),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             BottonCard(),
             Divider(color: Colors.grey),
           ],
