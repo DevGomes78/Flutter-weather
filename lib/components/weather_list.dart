@@ -76,15 +76,14 @@ class _WeatherListState extends State<WeatherList> {
                           DetailsPage(forecast: controller.lista[index])));
             },
             child: Card(
-              elevation: 5,
+              color: Colors.transparent,
+
               child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 2),
                 height: 100,
                 width: 150,
                 decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [Colors.black, Colors.blueAccent])),
+                    color: Colors.transparent),
                 child: Column(
                   children: [
                     Text(
