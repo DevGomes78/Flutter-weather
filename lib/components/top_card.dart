@@ -50,10 +50,10 @@ class _TopCardState extends State<TopCard> {
 
   _topCard() {
     return Container(
-      height: 380,
+      height: MediaQuery.of(context).size.height/2.3,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: Colors.black,
       ),
       child: Stack(
         children: [
@@ -64,7 +64,7 @@ class _TopCardState extends State<TopCard> {
               controller.json['results']['city'],
               style: const TextStyle(
                 fontSize: 20,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),
@@ -75,61 +75,69 @@ class _TopCardState extends State<TopCard> {
               controller.json['results']['date'],
               style: const TextStyle(
                 fontSize: 16,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),
           Positioned(
             left: 130,
-            top: 120,
+            top: 100,
             child: controller.json['results']['forecast'][0]['description'] ==
                     StringConstants.clearWeather
                 ? const Icon(
                     Icons.sunny,
-                    size: 50,
+                    size: 150,
                     color: Colors.amber,
                   )
                 : controller.json['results']['forecast'][0]['description'] ==
-                        StringConstants.Rain
+                        StringConstants.partlyCloud
                     ? const Icon(
-                        Icons.cloudy_snowing,
-                        size: 50,
+                        Icons.cloud,
+                        size: 150,
                         color: Colors.grey,
                       )
                     : controller.json['results']['forecast'][0]
                                 ['description'] ==
-                            StringConstants.scatteredRains
+                            StringConstants.Rain
                         ? const Icon(
-                            Icons.sunny_snowing,
+                            Icons.cloudy_snowing,
                             size: 150,
-                            color: Colors.amber,
-                          )
-                        : const Icon(
-                            Icons.cloud,
-                            size: 50,
                             color: Colors.grey,
-                          ),
+                          )
+                        : controller.json['results']['forecast'][0]
+                                    ['description'] ==
+                                StringConstants.scatteredRains
+                            ? const Icon(
+                                Icons.sunny_snowing,
+                                size: 150,
+                                color: Colors.amber,
+                              )
+                            : const Icon(
+                                Icons.cloud,
+                                size: 150,
+                                color: Colors.grey,
+                              ),
           ),
           Positioned(
             left: 180,
-            top: 280,
+            top: 240,
             child: Text(
               '${controller.json['results']['forecast'][0]['max']} °',
               style: const TextStyle(
-                fontSize: 35,
-                color: Colors.black,
+                fontSize: 40,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
           const Positioned(
             left: 20,
-            top: 355,
+            top: 320,
             child: Text(
               StringConstants.forecastForWeek,
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
