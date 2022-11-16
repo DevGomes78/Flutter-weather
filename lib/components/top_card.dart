@@ -120,7 +120,7 @@ class _TopCardState extends State<TopCard> {
           ),
           Positioned(
             left: 180,
-            top: 240,
+            top: 250,
             child: Text(
               '${controller.json['results']['forecast'][0]['max']} °',
               style: const TextStyle(
