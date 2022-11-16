@@ -7,16 +7,16 @@ class WeatherModel {
 
   WeatherModel(
       {this.by,
-        this.validKey,
-        this.results,
-        this.executionTime,
-        this.fromCache});
+      this.validKey,
+      this.results,
+      this.executionTime,
+      this.fromCache});
 
   WeatherModel.fromJson(Map<String, dynamic> json) {
     by = json['by'];
     validKey = json['valid_key'];
     results =
-    json['results'] != null ? new Results.fromJson(json['results']) : null;
+        json['results'] != null ? new Results.fromJson(json['results']) : null;
     executionTime = json['execution_time'];
     fromCache = json['from_cache'];
   }
@@ -25,9 +25,7 @@ class WeatherModel {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['by'] = this.by;
     data['valid_key'] = this.validKey;
-    if (this.results != null) {
-      data['results'] = this.results!.toJson();
-    }
+
     data['execution_time'] = this.executionTime;
     data['from_cache'] = this.fromCache;
     return data;
@@ -58,25 +56,25 @@ class Results {
 
   Results(
       {this.temp,
-        this.date,
-        this.time,
-        this.conditionCode,
-        this.description,
-        this.currently,
-        this.cid,
-        this.city,
-        this.imgId,
-        this.humidity,
-        this.cloudiness,
-        this.rain,
-        this.windSpeedy,
-        this.windDirection,
-        this.sunrise,
-        this.sunset,
-        this.conditionSlug,
-        this.cityName,
-        this.forecast,
-        this.cref});
+      this.date,
+      this.time,
+      this.conditionCode,
+      this.description,
+      this.currently,
+      this.cid,
+      this.city,
+      this.imgId,
+      this.humidity,
+      this.cloudiness,
+      this.rain,
+      this.windSpeedy,
+      this.windDirection,
+      this.sunrise,
+      this.sunset,
+      this.conditionSlug,
+      this.cityName,
+      this.forecast,
+      this.cref});
 
   Results.fromJson(Map<String, dynamic> json) {
     temp = json['temp'];
@@ -105,33 +103,6 @@ class Results {
     }
     cref = json['cref'];
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['temp'] = this.temp;
-    data['date'] = this.date;
-    data['time'] = this.time;
-    data['condition_code'] = this.conditionCode;
-    data['description'] = this.description;
-    data['currently'] = this.currently;
-    data['cid'] = this.cid;
-    data['city'] = this.city;
-    data['img_id'] = this.imgId;
-    data['humidity'] = this.humidity;
-    data['cloudiness'] = this.cloudiness;
-    data['rain'] = this.rain;
-    data['wind_speedy'] = this.windSpeedy;
-    data['wind_direction'] = this.windDirection;
-    data['sunrise'] = this.sunrise;
-    data['sunset'] = this.sunset;
-    data['condition_slug'] = this.conditionSlug;
-    data['city_name'] = this.cityName;
-    if (this.forecast != null) {
-      data['forecast'] = this.forecast!.map((v) => v.toJson()).toList();
-    }
-    data['cref'] = this.cref;
-    return data;
-  }
 }
 
 class Forecast {
@@ -148,15 +119,15 @@ class Forecast {
 
   Forecast(
       {this.date,
-        this.weekday,
-        this.max,
-        this.min,
-        this.cloudiness,
-        this.rain,
-        this.rainProbability,
-        this.windSpeedy,
-        this.description,
-        this.condition});
+      this.weekday,
+      this.max,
+      this.min,
+      this.cloudiness,
+      this.rain,
+      this.rainProbability,
+      this.windSpeedy,
+      this.description,
+      this.condition});
 
   Forecast.fromJson(Map<String, dynamic> json) {
     date = json['date'];
@@ -169,20 +140,5 @@ class Forecast {
     windSpeedy = json['wind_speedy'];
     description = json['description'];
     condition = json['condition'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['date'] = this.date;
-    data['weekday'] = this.weekday;
-    data['max'] = this.max;
-    data['min'] = this.min;
-    data['cloudiness'] = this.cloudiness;
-    data['rain'] = this.rain;
-    data['rain_probability'] = this.rainProbability;
-    data['wind_speedy'] = this.windSpeedy;
-    data['description'] = this.description;
-    data['condition'] = this.condition;
-    return data;
   }
 }
