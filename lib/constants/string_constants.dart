@@ -6,4 +6,5 @@ class StringConstants{
   static const scatteredRains = 'Chuvas esparsas';
   static const partlyCloud = 'Parcialmente nublado';
   static const aditionalInfo = 'Informaçoes adicionais';
+  static const state = 'São Paulo,Sp';
 }
