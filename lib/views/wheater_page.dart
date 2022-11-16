@@ -20,7 +20,7 @@ class _WheaterPageState extends State<WheaterPage> {
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [Colors.black, Colors.blueAccent])
+                colors: [Colors.blueAccent, Colors.black])
         ),
         child: ListView(
           children: const [
