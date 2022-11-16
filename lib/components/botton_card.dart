@@ -49,10 +49,7 @@ class _BottonCardState extends State<BottonCard> {
   _bottonCard() {
     return Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.black, Colors.blueAccent])
+          color: Colors.transparent
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

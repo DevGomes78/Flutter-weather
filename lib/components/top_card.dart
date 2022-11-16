@@ -53,10 +53,7 @@ class _TopCardState extends State<TopCard> {
       height: MediaQuery.of(context).size.height/2.3,
       width: double.infinity,
       decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.black, Colors.blueAccent])
+          color: Colors.transparent
       ),
       child: Stack(
         children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wheater/constants/string_constants.dart';
 import 'package:flutter_wheater/models/weather_model.dart';
+import 'package:flutter_wheater/views/details_page.dart';
 import 'package:provider/provider.dart';
 
 import '../service/weather_service.dart';
@@ -61,19 +62,18 @@ class _WeatherListState extends State<WeatherList> {
     return Container(
       height: MediaQuery.of(context).size.height / 4.5,
       width: double.infinity,
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.black, Colors.blueAccent])
-      ),
+      decoration: const BoxDecoration(color: Colors.transparent),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: controller.lista.length,
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
-              date.getdate(query: controller.lista[index].toString());
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          DetailsPage(forecast: controller.lista[index])));
             },
             child: Card(
               elevation: 5,
@@ -84,8 +84,7 @@ class _WeatherListState extends State<WeatherList> {
                     gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        colors: [Colors.black, Colors.blueAccent])
-                ),
+                        colors: [Colors.black, Colors.blueAccent])),
                 child: Column(
                   children: [
                     Text(
