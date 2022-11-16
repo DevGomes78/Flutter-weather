@@ -56,10 +56,19 @@ class _DetailsPageState extends State<DetailsPage> {
               left: 20,
               top: 140,
               child: Text(
-                widget.forecast.date.toString(),
-                style: const TextStyle(fontSize: 25, color: Colors.white),
+                ' ${widget.forecast.date.toString()},',
+                style: const TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
+            Positioned(
+              left: 90,
+              top: 140,
+              child: Text(
+                widget.forecast.weekday.toString(),
+                style: const TextStyle(fontSize: 20, color: Colors.white),
+              ),
+            ),
+            SizedBox(width: 20),
             Positioned(
               left: 100,
               top: 250,
@@ -98,24 +107,24 @@ class _DetailsPageState extends State<DetailsPage> {
                                 )),
             ),
             Positioned(
-              left: 150,
+              left: 120,
               top: 470,
               child: Text(
-                ' ${widget.forecast.max.toString()}°',
+                widget.forecast.description.toString(),
                 style: const TextStyle(
-                  fontSize: 60,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
             ),
             Positioned(
-              left: 120,
-              top: 430,
+              left: 150,
+              top: 520,
               child: Text(
-                widget.forecast.description.toString(),
+                ' ${widget.forecast.max.toString()}°',
                 style: const TextStyle(
-                  fontSize: 25,
+                  fontSize: 60,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
