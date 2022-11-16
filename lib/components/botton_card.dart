@@ -92,7 +92,7 @@ class _BottonCardState extends State<BottonCard> {
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(width: 75),
+                      const SizedBox(width: 95),
                       Row(
                         children: [
                           const Text(
@@ -119,7 +119,7 @@ class _BottonCardState extends State<BottonCard> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
                       const Text(
@@ -140,7 +140,7 @@ class _BottonCardState extends State<BottonCard> {
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(width: 20),
+                      const SizedBox(width: 40),
                       Row(
                         children: [
                           Text(
