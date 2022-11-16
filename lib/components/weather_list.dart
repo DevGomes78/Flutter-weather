@@ -14,8 +14,9 @@ class WeatherList extends StatefulWidget {
 
 class _WeatherListState extends State<WeatherList> {
   late String tempo;
+  Results results = Results();
   WeatherService controller = WeatherService();
-
+  WeatherService date = WeatherService();
 
   @override
   void initState() {
@@ -58,18 +59,18 @@ class _WeatherListState extends State<WeatherList> {
 
   _weatherList() {
     return Container(
-      height: 180,
+      height: MediaQuery.of(context).size.height/4.5,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: Colors.black,
       ),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: controller.lista.length,
         itemBuilder: (context, index) {
           return InkWell(
-            onTap: (){
-
+            onTap: () {
+              date.getdate(query: controller.lista[index].toString());
             },
             child: Card(
               elevation: 5,
@@ -77,7 +78,7 @@ class _WeatherListState extends State<WeatherList> {
                 height: 100,
                 width: 150,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 child: Column(
                   children: [
@@ -86,16 +87,16 @@ class _WeatherListState extends State<WeatherList> {
                       style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: Colors.white),
                     ),
                     const SizedBox(height: 10),
                     Text(
                       controller.lista[index].date.toString(),
-                      style: const TextStyle(fontSize: 18, color: Colors.black),
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
                     ),
                     const SizedBox(height: 10),
                     controller.lista[index].description.toString() ==
-                        StringConstants.clearWeather
+                            StringConstants.clearWeather
                         ? const Icon(
                             Icons.sunny,
                             size: 50,
@@ -109,12 +110,11 @@ class _WeatherListState extends State<WeatherList> {
                                 color: Colors.grey,
                               )
                             : controller.lista[index].description.toString() ==
-                        StringConstants.scatteredRains
-
-                        ? const Icon(
+                                    StringConstants.scatteredRains
+                                ? const Icon(
                                     Icons.sunny_snowing,
                                     size: 50,
-                      color: Colors.amber,
+                                    color: Colors.amber,
                                   )
                                 : const Icon(
                                     Icons.cloud,
@@ -127,7 +127,7 @@ class _WeatherListState extends State<WeatherList> {
                       style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: Colors.white),
                     ),
                     const SizedBox(height: 10),
                   ],

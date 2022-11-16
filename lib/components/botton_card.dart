@@ -49,7 +49,7 @@ class _BottonCardState extends State<BottonCard> {
   _bottonCard() {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+          color: Colors.black
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +61,7 @@ class _BottonCardState extends State<BottonCard> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),
@@ -80,7 +80,7 @@ class _BottonCardState extends State<BottonCard> {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(width: 40),
@@ -89,7 +89,7 @@ class _BottonCardState extends State<BottonCard> {
                             .toString(),
                         style: const TextStyle(
                           fontSize: 18,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(width: 75),
@@ -100,7 +100,7 @@ class _BottonCardState extends State<BottonCard> {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                           const SizedBox(width: 40),
@@ -109,7 +109,7 @@ class _BottonCardState extends State<BottonCard> {
                                 .toString(),
                             style: const TextStyle(
                               fontSize: 18,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -127,7 +127,7 @@ class _BottonCardState extends State<BottonCard> {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(width: 25),
@@ -137,7 +137,7 @@ class _BottonCardState extends State<BottonCard> {
                             .toString()),
                         style: const TextStyle(
                           fontSize: 18,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(width: 20),
@@ -150,7 +150,7 @@ class _BottonCardState extends State<BottonCard> {
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ],
