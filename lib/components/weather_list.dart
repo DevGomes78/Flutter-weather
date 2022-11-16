@@ -59,10 +59,13 @@ class _WeatherListState extends State<WeatherList> {
 
   _weatherList() {
     return Container(
-      height: MediaQuery.of(context).size.height/4.5,
+      height: MediaQuery.of(context).size.height / 4.5,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.black,
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.black, Colors.blueAccent])
       ),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -78,7 +81,10 @@ class _WeatherListState extends State<WeatherList> {
                 height: 100,
                 width: 150,
                 decoration: const BoxDecoration(
-                  color: Colors.black,
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [Colors.black, Colors.blueAccent])
                 ),
                 child: Column(
                   children: [

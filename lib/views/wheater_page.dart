@@ -17,7 +17,10 @@ class _WheaterPageState extends State<WheaterPage> {
       backgroundColor: Colors.black,
       body: Container(
         decoration: const BoxDecoration(
-          color: Colors.black,
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.black, Colors.black])
         ),
         child: ListView(
           children: const [
