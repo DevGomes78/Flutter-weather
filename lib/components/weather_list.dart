@@ -77,13 +77,11 @@ class _WeatherListState extends State<WeatherList> {
             },
             child: Card(
               color: Colors.transparent,
-
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 2),
                 height: 100,
                 width: 150,
-                decoration: const BoxDecoration(
-                    color: Colors.transparent),
+                decoration: const BoxDecoration(color: Colors.transparent),
                 child: Column(
                   children: [
                     Text(
