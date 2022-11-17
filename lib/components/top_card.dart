@@ -11,8 +11,7 @@ class TopCard extends StatefulWidget {
 }
 
 class _TopCardState extends State<TopCard> {
-  final TextEditingController _cityController = TextEditingController();
-  WeatherApi controller = WeatherApi();
+    WeatherApi controller = WeatherApi();
 
   @override
   void initState() {
@@ -50,11 +49,9 @@ class _TopCardState extends State<TopCard> {
 
   _topCard() {
     return Container(
-      height: MediaQuery.of(context).size.height/2.3,
+      height: MediaQuery.of(context).size.height / 2.3,
       width: double.infinity,
-      decoration: const BoxDecoration(
-          color: Colors.transparent
-      ),
+      decoration: const BoxDecoration(color: Colors.transparent),
       child: Stack(
         children: [
           Positioned(
@@ -132,7 +129,7 @@ class _TopCardState extends State<TopCard> {
           ),
           const Positioned(
             left: 20,
-            top: 320,
+            top: 330,
             child: Text(
               StringConstants.forecastForWeek,
               style: TextStyle(
