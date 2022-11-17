@@ -48,9 +48,7 @@ class _BottonCardState extends State<BottonCard> {
 
   _bottonCard() {
     return Container(
-      decoration: const BoxDecoration(
-          color: Colors.transparent
-      ),
+      decoration: const BoxDecoration(color: Colors.transparent),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -78,7 +76,7 @@ class _BottonCardState extends State<BottonCard> {
                       const Text(
                         'Min',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
@@ -88,17 +86,17 @@ class _BottonCardState extends State<BottonCard> {
                         '${(controller.json['results']['forecast'][0]['min'])} °'
                             .toString(),
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(width: 95),
+                      const SizedBox(width: 85),
                       Row(
                         children: [
                           const Text(
                             'Max',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
@@ -108,7 +106,7 @@ class _BottonCardState extends State<BottonCard> {
                             '${(controller.json['results']['forecast'][0]['max'])} °'
                                 .toString(),
                             style: const TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               color: Colors.white,
                             ),
                           ),
@@ -118,38 +116,38 @@ class _BottonCardState extends State<BottonCard> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
-                      const Text(
-                        'Vento',
-                        style: TextStyle(
-                          fontSize: 20,
+                      Text(
+                        (controller.json['results']['forecast'][0]
+                        ['description'])
+                            .toString(),
+                        style: const TextStyle(
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(width: 25),
-                      Text(
-                        (controller.json['results']['forecast'][0]
-                                ['wind_speedy']
-                            .toString()),
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const SizedBox(width: 40),
+                      const SizedBox(width: 80),
                       Row(
                         children: [
-                          Text(
-                            (controller.json['results']['forecast'][0]
-                                    ['description'])
-                                .toString(),
-                            style: const TextStyle(
+
+                          const Text(
+                            'Vento',
+                            style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(width: 25),
+                          Text(
+                            (controller.json['results']['forecast'][0]
+                            ['wind_speedy']
+                                .toString()),
+                            style: const TextStyle(
+                              fontSize: 16,
                               color: Colors.white,
                             ),
                           ),
