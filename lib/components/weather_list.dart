@@ -76,6 +76,9 @@ class _WeatherListState extends State<WeatherList> {
                           DetailsPage(forecast: controller.lista[index])));
             },
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
               color: Colors.transparent,
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 2),
@@ -84,19 +87,22 @@ class _WeatherListState extends State<WeatherList> {
                 decoration: const BoxDecoration(color: Colors.transparent),
                 child: Column(
                   children: [
-                    Text(
-                      controller.lista[index].weekday.toString(),
-                      style: const TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text(
+                        controller.lista[index].weekday.toString(),
+                        style: const TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 8),
                     Text(
                       controller.lista[index].date.toString(),
                       style: const TextStyle(fontSize: 18, color: Colors.white),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 8),
                     controller.lista[index].description.toString() ==
                             StringConstants.clearWeather
                         ? const Icon(
@@ -123,7 +129,7 @@ class _WeatherListState extends State<WeatherList> {
                                     size: 50,
                                     color: Colors.grey,
                                   ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 8),
                     Text(
                       '${controller.lista[index].max} °'.toString(),
                       style: const TextStyle(
