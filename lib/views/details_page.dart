@@ -113,14 +113,17 @@ class _DetailsPageState extends State<DetailsPage> {
                             )),
         ),
         Positioned(
-          left: 120,
           top: 470,
-          child: Text(
-            widget.forecast.description.toString(),
-            style: const TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+          child: Container(
+            width: 400,
+            alignment: Alignment.center,
+            child: Text(
+              widget.forecast.description.toString(),
+              style: const TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
         ),

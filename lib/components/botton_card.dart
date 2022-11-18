@@ -124,19 +124,19 @@ class _BottonCardState extends State<BottonCard> {
                         ['description'])
                             .toString(),
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(width: 80),
+                      const SizedBox(width: 90),
                       Row(
                         children: [
 
                           const Text(
                             'Vento',
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),

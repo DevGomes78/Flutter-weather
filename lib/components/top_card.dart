@@ -11,7 +11,7 @@ class TopCard extends StatefulWidget {
 }
 
 class _TopCardState extends State<TopCard> {
-    WeatherApi controller = WeatherApi();
+  WeatherApi controller = WeatherApi();
 
   @override
   void initState() {
