@@ -3,6 +3,9 @@
  
  O objetivo desse desafio foi criar um App utilizando
 uma Api de Meteorologia do estado,e mostrar a meteorologia dodia e semana,e selecionado qualquer dia da semana,mostrar os dados relativos ao dia selecionado,
+### Mais sobre o App:
++ Componentização para reutilizar em outros arquivos
++ Utilizado padrao MVC na finalidade de organização do código.
 
 ## Dependencias Utilizadas:
 + http:
