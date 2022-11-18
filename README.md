@@ -1,16 +1,11 @@
-# flutter_wheater
+<h1>Desafio Weather App</h1>
 
-A new Flutter project.
+ 
+ O objetivo desse desafio foi criar um App utilizando
+uma Api de Meteorologia do estado,e mostrar a meteorologia dodia e semana,e selecionado qualquer dia da semana,mostrar os dados relativos ao dia selecionado,
 
-## Getting Started
+## Dependencias Utilizadas:
++ http:
++ provider:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![weather app](https://user-images.githubusercontent.com/98062365/202769846-5ecea1bd-0efc-4085-98e2-c5a5376c7ba5.gif)
